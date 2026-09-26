@@ -19,6 +19,7 @@ require("lazy").setup {
         -- import your plugins
         { import = "plugins" },
         { import = "plugins.rust" },
+        { import = "plugins.flutter" },
     },
     -- Configure any other settings here. See the documentation for more details.
     -- automatically check for plugin updates

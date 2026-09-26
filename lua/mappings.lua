@@ -70,7 +70,7 @@ end)
 
 -- Telescope keybindings
 local telescope_builtin = require "telescope.builtin"
-map("n", "<leader>fp", function()
+map("n", "<leader>tp", function()
     telescope_builtin.git_files {
         use_git_root = false,
         show_untracked = true,
@@ -78,13 +78,31 @@ map("n", "<leader>fp", function()
 end, "Telescope: find all files in cwd")
 map(
     "n",
-    "<leader>fa",
+    "<leader>ta",
     "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
     "Telescope find all files"
 )
-map("n", "<leader>fc", telescope_builtin.git_commits, "Telescope git commits")
-map("n", "<leader>fs", telescope_builtin.git_status, "Telescope git status")
-map("n", "<leader>fg", telescope_builtin.live_grep, "Telescope live grep")
-map("n", "<leader>fb", telescope_builtin.buffers, "Telescope buffers")
+map("n", "<leader>tc", telescope_builtin.git_commits, "Telescope git commits")
+map("n", "<leader>ts", telescope_builtin.git_status, "Telescope git status")
+map("n", "<leader>tg", telescope_builtin.live_grep, "Telescope live grep")
+map("n", "<leader>tb", telescope_builtin.buffers, "Telescope buffers")
 
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>")
+
+-- Flutter keybindings
+map("n", "<leader>fs", "<cmd>FlutterRun<cr>") -- start the project
+map("n", "<leader>fr", "<cmd>FlutterReload<cr>") -- hot reload
+map("n", "<leader>fR", "<cmd>FlutterRestart<cr>") -- hot restart
+map("n", "<leader>fq", "<cmd>FlutterQuit<cr>") -- quit
+map("n", "<leader>fd", "<cmd>FlutterDevices<cr>")
+map("n", "<leader>fe", "<cmd>FlutterEmulators<cr>")
+map("n", "<leader>fo", "<cmd>FlutterOutlineToggle<cr>")
+map("n", "<leader>fl", "<cmd>FlutterLogToggle<cr>")
+map("n", "<leader>fp", "<cmd>FlutterPubGet<cr>")
+
+-- Tmux keybindings
+map("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>")
+map("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>")
+map("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>")
+map("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>")
+map("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<CR>")

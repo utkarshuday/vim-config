@@ -64,3 +64,6 @@ vim.opt.fillchars = { eob = " " }
 vim.opt.wrap = false
 
 vim.o.winborder = "single"
+
+vim.g.netrw_liststyle = 3
+vim.g.netrw_banner = 0
